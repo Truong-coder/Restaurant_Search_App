@@ -1,0 +1,6 @@
+*> YELP API
+Client ID
+Nvdv1VbAtroftdaQnC47kw
+
+API Key
+FDkBM4S_WdHHPjI3kj-1tvyzMGmHbJ_dBF_QCROwmBSQqpMDMcGJ-ZeqWsFSowTKFnbzvL386OyGqkVJcoWahX1OFhPtsRhG-aGhP0ZB4hhPC_x5rFbyNApPJQdHY3Yx
