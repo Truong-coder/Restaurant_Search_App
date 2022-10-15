@@ -2,11 +2,14 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import ResultsDetail from '../components/ResultsDetail';
+
+
 
 // // destructure the props we care about
 const ResultsList = ({ title, results }) => {
     return (
-        <View>
+        <View style ={styles.container}>
             <Text style = {styles.title}>{title}</Text>
             <FlatList 
                 // By default a flat list render itself vertically or top to bottom
@@ -16,7 +19,9 @@ const ResultsList = ({ title, results }) => {
                 keyExtractor = {result => result.id} // unique and consisteant after rerender
                 renderItem = {({ item }) => {
                     // JSX
-                    return <Text>{item.name}</Text>
+                    return <ResultsDetail result = {item}/>;
+                        // <Text>{item.name}</Text>
+                        
                 }}
             />
         </View>
@@ -27,7 +32,13 @@ const ResultsList = ({ title, results }) => {
 const styles = StyleSheet.create({
     title:{
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 10,
+        marginBottom: 15
+        
+    },
+    container: {
+        marginBottom: 10
     }
 });
 export default ResultsList;

@@ -13,7 +13,7 @@ const SearchScreen = () => {
   const [term, setTerm] = useState('');
   // Create new State to handle the result get back from Yelp API
   const [searchApi, results, errorMessage] = useResults();
-  console.log(results)
+  // console.log(results)
 
   const filterResultsByPrice = (price) =>{
       // price === '$' || '$$' || '$$$'
@@ -23,7 +23,7 @@ const SearchScreen = () => {
   };
   //   JSX block
   return (
-    <View>
+    <View style = {{ marginLeft:15 }}>
     {/* 
         * add another callback down to search bar component
         *
@@ -35,7 +35,7 @@ const SearchScreen = () => {
       onTermSubmit={() => searchApi(term)} 
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-    <Text>We have found {results.length} results</Text>
+    <Text style = {styles.text}> We have found {results.length} results</Text>
 
     <ResultsList 
         results = {filterResultsByPrice('$')} 
@@ -54,7 +54,11 @@ const SearchScreen = () => {
   );
 };
 
-  const styles = StyleSheet.create({});
+  const styles = StyleSheet.create({
+    text:{
+      marginLeft: 8
+    }
+  });
   export default SearchScreen;
 
 

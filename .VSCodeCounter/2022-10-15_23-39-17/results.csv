@@ -1,0 +1,9 @@
+"filename", "language", "JavaScript", "comment", "blank", "total"
+"h:\foodApp\src\Color.js", "JavaScript", 16, 0, 2, 18
+"h:\foodApp\src\api\yelp.js", "JavaScript", 8, 4, 5, 17
+"h:\foodApp\src\components\ResultsList.js", "JavaScript", 24, 5, 4, 33
+"h:\foodApp\src\components\SearchBar.js", "JavaScript", 41, 3, 2, 46
+"h:\foodApp\src\hooks\useResults.js", "JavaScript", 25, 9, 6, 40
+"h:\foodApp\src\screens\HomeScreen.js", "JavaScript", 16, 3, 3, 22
+"h:\foodApp\src\screens\SearchScreen.js", "JavaScript", 42, 8, 13, 63
+"Total", "-", 172, 32, 35, 239
