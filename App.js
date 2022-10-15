@@ -1,13 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import HomeScreen from './src/screens/HomeScreen';
+// import HomeScreen from './src/screens/HomeScreen';
 import SearchScreen from './src/screens/SearchScreen';
 
 const navigator = createStackNavigator(
     {
-      Home: HomeScreen,
+      
       Search: SearchScreen
     },
     {
@@ -19,6 +18,6 @@ const navigator = createStackNavigator(
       },
     }
 );
-const styles = StyleSheet.create({});
+
 
 export default createAppContainer(navigator);

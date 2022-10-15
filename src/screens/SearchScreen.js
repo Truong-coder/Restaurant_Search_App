@@ -1,30 +1,62 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
+import useResults from '../hooks/useResults';
+import ResultsList from '../components/ResultsList';
+
+
 // Search Screen component searches on Yelp API
-
-const SearchScreen = ({navigation}) =>{
+// Anytime that we want any content on the screen to update whatsoever, we're alays going to make use of State
+const SearchScreen = () => {
     // got piece of state managed by search screen and passed down that piece of state and a way to change it to our search bar
-    const [term, setTerm] = useState('')
-    return(
-        <View>
-            {/* 
-            * add another callback down to search bar component
-            *
-            */}
-            <SearchBar 
-                term = {term} 
-                onTermChange = {newTerm => setTerm(newTerm)}
-                onTermSubmit = { () => console.log(' Term was submitted ')}
-            />    
-            <Text> This is Search Screen</Text>
-            <Text> {term} </Text>
-        </View>
-    );
-}
 
-const styles = StyleSheet.create({
+  const [term, setTerm] = useState('');
+  // Create new State to handle the result get back from Yelp API
+  const [searchApi, results, errorMessage] = useResults();
+  console.log(results)
 
-});
+  const filterResultsByPrice = (price) =>{
+      // price === '$' || '$$' || '$$$'
+      return results.filter(result => {
+        return result.price === price;
+      });
+  };
+  //   JSX block
+  return (
+    <View>
+    {/* 
+        * add another callback down to search bar component
+        *
+    */}
+        
+    <SearchBar 
+      term={term} 
+      onTermChange={setTerm} 
+      onTermSubmit={() => searchApi(term)} 
+      />
+      {errorMessage ? <Text>{errorMessage}</Text> : null}
+    <Text>We have found {results.length} results</Text>
 
-export default SearchScreen;
+    <ResultsList 
+        results = {filterResultsByPrice('$')} 
+        title = "Cost Effective" 
+    />
+    <ResultsList 
+        results = {filterResultsByPrice('$$')}
+        title = "Bit Pricer"
+    />
+    <ResultsList 
+      results = {filterResultsByPrice('$$$')}
+      title = "Big Spender"
+    />
+
+  </View>
+  );
+};
+
+  const styles = StyleSheet.create({});
+  export default SearchScreen;
+
+
+
+
