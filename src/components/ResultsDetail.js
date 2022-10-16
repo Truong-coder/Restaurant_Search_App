@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-const ResultsDeatail = ({ result }) => {
+const ResultsDetail = ({ result }) => {
     return(
         <View style = {styles.container}>
             {/* 
@@ -21,7 +21,7 @@ const ResultsDeatail = ({ result }) => {
 
 const styles = StyleSheet.create({
     container: {
-       marginLeft: 10 
+        marginLeft: 10 
     },
     image: {
         width: 250,
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ResultsDeatail;
+export default ResultsDetail;

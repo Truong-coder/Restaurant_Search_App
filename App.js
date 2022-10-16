@@ -3,11 +3,12 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 // import HomeScreen from './src/screens/HomeScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import ResultsShowScreen from './src/screens/ResultsShowScreen';
 
 const navigator = createStackNavigator(
     {
-      
-      Search: SearchScreen
+      Search: SearchScreen,
+      ResultShow: ResultsShowScreen
     },
     {
       // show default screen when start up

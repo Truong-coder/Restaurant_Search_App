@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, 
+         Text, 
+         StyleSheet, 
+         ScrollView, 
+        } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
@@ -15,7 +19,7 @@ const SearchScreen = () => {
   const [searchApi, results, errorMessage] = useResults();
   // console.log(results)
 
-  const filterResultsByPrice = (price) =>{
+  const filterResultsByPrice = price => {
       // price === '$' || '$$' || '$$$'
       return results.filter(result => {
         return result.price === price;
@@ -23,7 +27,14 @@ const SearchScreen = () => {
   };
   //   JSX block
   return (
-    <View style = {{ marginLeft:15 }}>
+
+    /**
+     * use 'flex:1' when have some content that's being cut off or is expanding off
+     * use this empty placeholder '<> </>' whenever need to return a grouping of elements
+     * using '<View> </View>' placeholder could be harmful to the layout overall
+     */
+    
+    <> 
     {/* 
         * add another callback down to search bar component
         *
@@ -35,22 +46,28 @@ const SearchScreen = () => {
       onTermSubmit={() => searchApi(term)} 
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-    <Text style = {styles.text}> We have found {results.length} results</Text>
 
-    <ResultsList 
-        results = {filterResultsByPrice('$')} 
-        title = "Cost Effective" 
-    />
-    <ResultsList 
-        results = {filterResultsByPrice('$$')}
-        title = "Bit Pricer"
-    />
-    <ResultsList 
-      results = {filterResultsByPrice('$$$')}
-      title = "Big Spender"
-    />
+    <ScrollView>
+      <Text style = {styles.text}> We have found {results.length} results</Text>
+      <ResultsList 
+          results = {filterResultsByPrice('$')} 
+          title = "Cost Effective"
+          // navigation = {navigation} //add in a navigation props
+      />
+      <ResultsList 
+          results = {filterResultsByPrice('$$')}
+          title = "Bit Pricer"
+          // navigation = {navigation} 
+      />
+      <ResultsList 
+        results = {filterResultsByPrice('$$$')}
+        title = "Big Spender"
+        // navigation = {navigation} 
+      />
 
-  </View>
+    </ScrollView>
+    
+  </>
   );
 };
 

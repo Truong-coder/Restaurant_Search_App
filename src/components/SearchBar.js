@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import Colors from '../Color';
-import {Feather} from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 // 
 // destructure 2 props
-const SearchBar = ({term, onTermChange, onTermSubmit}) => {
+const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
     return (
         <View style={styles.backgroundStyle}>
             <Feather name="search" style={styles.iconStyle} />
@@ -13,7 +13,7 @@ const SearchBar = ({term, onTermChange, onTermSubmit}) => {
                 autoCorrect={false}
                 style={styles.inputStyle}
                 // add a prop to show fadded out text
-                placeholder="Search"
+                placeholder="Search" //
                 value={term}
                 onChangeText={onTermChange}
                 onEndEditing={onTermSubmit}
@@ -23,7 +23,7 @@ const SearchBar = ({term, onTermChange, onTermSubmit}) => {
 };
 
 const styles = StyleSheet.create({
-    backgroundStyle:{
+    backgroundStyle: {
         marginTop: 15,
         backgroundColor: 'FloralWhite',
         height: 50,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         flexDirection: 'row'
     },
-    inputStyle:{
+    inputStyle: {
         borderColor: 'black',
         flex: 1, //use as much as space
         fontSize: 18
