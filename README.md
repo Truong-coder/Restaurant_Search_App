@@ -1,4 +1,4 @@
-# Restaurant_Search_App
+# Restaurant Search App
 
 Step 1: Download the Expo App on Google play or App store
 
