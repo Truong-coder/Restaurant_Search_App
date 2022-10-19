@@ -1,4 +1,7 @@
 # Restaurant Search App
+• Description: A cross-platform Restaurant Search application built with React Native and Yelp API. In this app, the user can search for some kind of restaurants. Once this app get some results from some search API, then it will display those in a series of lists on the screen. Each of these are going to be different categories of restaurants that the user find.
+
+• How to deploy the application: 
 
 Step 1: Download the Expo App on Google play or App store
 
