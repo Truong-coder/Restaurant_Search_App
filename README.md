@@ -50,8 +50,9 @@ Step 1: Download the Expo App on Google play or App store
 
 Step 2: Scan the QR Code to run on your Mobile devices
 
-![image](https://user-images.githubusercontent.com/81181191/198274541-b3f09c7c-f9aa-4cd1-bd0f-6658cca7dd4e.png)
-
+<a>
+<img src="https://user-images.githubusercontent.com/81181191/198274541-b3f09c7c-f9aa-4cd1-bd0f-6658cca7dd4e.png" width="250" height="250"/>
+</a>
 
 
 For more detail, click here: https://expo.dev/@truonghp/foodApp?serviceType=classic&distribution=expo-go
@@ -64,8 +65,8 @@ Here are some of them:
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
-- [ngrock](https://ngrok.com)
-- [json-server](https://www.npmjs.com/package/json-server)
+- [Yelp API](https://fusion.yelp.com)
+
 
 # :closed_book: 
 
